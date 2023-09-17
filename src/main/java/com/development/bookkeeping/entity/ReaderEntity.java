@@ -17,14 +17,14 @@ public class ReaderEntity {
     @Column(name = "Curr_Book")
     private String currentBook;
     @Column(name = "Birthday")
-    private Date dateOfBirth;
+    private String birthday;
 
-    public ReaderEntity(Long id, String name, String favoriteBook, String currentBook, Date birthday) {
+    public ReaderEntity(Long id, String name, String favoriteBook, String currentBook, String birthday) {
         this.id = id;
         this.name = name;
         this.favoriteBook = favoriteBook;
         this.currentBook = currentBook;
-        this.dateOfBirth = birthday;
+        this.birthday = birthday;
     }
 
     public Long getId() {
@@ -59,12 +59,12 @@ public class ReaderEntity {
         this.currentBook = currentBook;
     }
 
-    public Date getBirthday() {
-        return dateOfBirth;
+    public String  getBirthday() {
+        return birthday;
     }
 
-    public void setBirthday(Date birthday) {
-        this.dateOfBirth = birthday;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
     @Override
@@ -74,7 +74,7 @@ public class ReaderEntity {
                 ", name='" + name + '\'' +
                 ", favoriteBook='" + favoriteBook + '\'' +
                 ", currentBook='" + currentBook + '\'' +
-                ", Date of Birth=" + dateOfBirth +
+                ", Date of Birth=" + birthday +
                 '}';
     }
 
