@@ -8,13 +8,13 @@ import java.util.Date;
 public class ReaderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Reader_ID")
+    @Column(name = "ID")
     private Long id;
-    @Column(name = "Reader_Name")
+    @Column(name = "Name")
     private String name;
-    @Column(name = "Fav_Book")
+    @Column(name = "FavBook")
     private String favoriteBook;
-    @Column(name = "Curr_Book")
+    @Column(name = "CurrBook")
     private String currentBook;
     @Column(name = "Birthday")
     private String birthday;
