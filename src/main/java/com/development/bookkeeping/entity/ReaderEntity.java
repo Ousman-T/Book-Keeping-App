@@ -8,15 +8,15 @@ import java.util.Date;
 public class ReaderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
+    @Column(name = "reader_id")
     private Long id;
-    @Column(name = "Name")
+    @Column(name = "reader_name")
     private String name;
-    @Column(name = "FavBook")
+    @Column(name = "favoriteBook")
     private String favoriteBook;
-    @Column(name = "CurrBook")
+    @Column(name = "currentBook")
     private String currentBook;
-    @Column(name = "Birthday")
+    @Column(name = "birthday")
     private String birthday;
 
     public ReaderEntity(Long id, String name, String favoriteBook, String currentBook, String birthday) {
@@ -26,6 +26,8 @@ public class ReaderEntity {
         this.currentBook = currentBook;
         this.birthday = birthday;
     }
+
+    public ReaderEntity(){};
 
     public Long getId() {
         return id;
