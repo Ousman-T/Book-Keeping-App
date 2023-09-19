@@ -24,6 +24,8 @@ public class BookEntity {
         this.genre = genre;
         this.description = description;
     }
+
+    public BookEntity(){};
     public Long getId() {
         return id;
     }
