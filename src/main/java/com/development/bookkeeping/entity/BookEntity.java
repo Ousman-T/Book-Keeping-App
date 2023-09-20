@@ -16,6 +16,8 @@ public class BookEntity {
     private String genre;
     @Column(name = "description")
     private String description;
+    @ManyToOne
+    private ReaderEntity reader;
 
     public BookEntity(Long id, String title, String author, String genre, String description){
         this.id = id;
