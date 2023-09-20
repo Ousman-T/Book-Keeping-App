@@ -27,7 +27,7 @@ public class BookController {
     public BookEntity saveBook(@RequestBody BookEntity bookEntity){
         return bookService.saveBook(bookEntity);
     }
-    @PutMapping("/{id}")
+    @PutMapping
     public BookEntity updateBook(@RequestBody BookEntity bookEntity){
         return bookService.updateBook(bookEntity);
     }
