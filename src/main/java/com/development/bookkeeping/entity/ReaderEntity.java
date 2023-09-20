@@ -3,6 +3,8 @@ package com.development.bookkeeping.entity;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
+
 @Entity
 @Table(name = "Reader")
 public class ReaderEntity {
@@ -10,7 +12,7 @@ public class ReaderEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "reader_id")
     private Long id;
-    @Column(name = "reader_name")
+    @Column(name = "name")
     private String name;
     @Column(name = "favoriteBook")
     private String favoriteBook;
@@ -18,6 +20,8 @@ public class ReaderEntity {
     private String currentBook;
     @Column(name = "birthday")
     private String birthday;
+    @OneToMany
+    private List<BookEntity> books;
 
     public ReaderEntity(Long id, String name, String favoriteBook, String currentBook, String birthday) {
         this.id = id;
