@@ -27,7 +27,7 @@ public class ReaderController {
     public ReaderEntity saveReader(@RequestBody ReaderEntity readerEntity){
         return readerService.saveReader(readerEntity);
     }
-@PutMapping("/{id}")
+@PutMapping
     public ReaderEntity updateReader(@RequestBody ReaderEntity readerEntity){
         return readerService.updateReader(readerEntity);
     }
