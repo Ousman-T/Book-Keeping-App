@@ -10,7 +10,6 @@ import java.util.List;
 public class ReaderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "reader_id")
     private Long id;
     @Column(name = "name")
     private String name;

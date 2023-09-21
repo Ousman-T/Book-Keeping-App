@@ -1,6 +1,7 @@
 package com.development.bookkeeping.controller;
 
 import com.development.bookkeeping.entity.ReaderEntity;
+import com.development.bookkeeping.exception.ApiRequestException;
 import com.development.bookkeeping.service.ReaderService;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,6 +18,7 @@ public class ReaderController {
     }
 @GetMapping
     public List<ReaderEntity> findAllReaders(){
+//        throw new ApiRequestException("Testing custom exceptions!");
         return readerService.findAllReaders();
     }
 @GetMapping("/{id}")
