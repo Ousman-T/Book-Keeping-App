@@ -2,6 +2,8 @@ package com.development.bookkeeping.entity;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name="book")
 public class BookEntity {
@@ -16,8 +18,13 @@ public class BookEntity {
     private String genre;
     @Column(name = "description")
     private String description;
-//    @ManyToMany
-//    private ReaderEntity reader;
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "reader_books",
+            joinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "reader_id", referencedColumnName = "id")
+    )
+    private List<ReaderEntity> readers;
 
     public BookEntity(Long id, String title, String author, String genre, String description){
         this.id = id;
