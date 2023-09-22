@@ -19,7 +19,12 @@ public class ReaderEntity {
     private String currentBook;
     @Column(name = "birthday")
     private String birthday;
-    @OneToMany
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "reader_books",
+            joinColumns = @JoinColumn(name = "reader_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "book_id", referencedColumnName = "id")
+    )
     private List<BookEntity> books;
 
     public ReaderEntity(Long id, String name, String favoriteBook, String currentBook, String birthday) {
