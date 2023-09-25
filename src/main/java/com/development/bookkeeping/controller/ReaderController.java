@@ -29,8 +29,8 @@ public class ReaderController {
     public ReaderEntity saveReader(@RequestBody ReaderEntity readerEntity){
         return readerService.saveReader(readerEntity);
     }
-@PutMapping
-    public ReaderEntity updateReader(@RequestBody ReaderEntity readerEntity){
+@PutMapping("/{id}")
+    public ReaderEntity updateReader(@PathVariable Long id,@RequestBody ReaderEntity readerEntity){
         return readerService.updateReader(readerEntity);
     }
     @DeleteMapping("/{id}")
