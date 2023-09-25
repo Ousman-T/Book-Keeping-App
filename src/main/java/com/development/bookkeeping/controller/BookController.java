@@ -27,9 +27,10 @@ public class BookController {
     public BookEntity saveBook(@RequestBody BookEntity bookEntity){
         return bookService.saveBook(bookEntity);
     }
-    @PutMapping
-    public BookEntity updateBook(@RequestBody BookEntity bookEntity){
+    @PutMapping("/{id}")
+    public BookEntity updateBook(@PathVariable Long id,@RequestBody BookEntity bookEntity){
         return bookService.updateBook(bookEntity);
+
     }
     @DeleteMapping("/{id}")
     public void deleteBook(@PathVariable("id") Long id){bookService.deleteBook(id);}

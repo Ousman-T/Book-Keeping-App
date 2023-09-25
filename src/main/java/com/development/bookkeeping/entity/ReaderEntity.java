@@ -2,7 +2,6 @@ package com.development.bookkeeping.entity;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -17,8 +16,10 @@ public class ReaderEntity {
     private String favoriteBook;
     @Column(name = "currentBook")
     private String currentBook;
-    @Column(name = "birthday")
-    private String birthday;
+    @Column(name = "favoriteGenre")
+    private String favoriteGenre;
+    @Column(name = "readBook")
+    private Integer readBook;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "reader_books",
@@ -27,12 +28,12 @@ public class ReaderEntity {
     )
     private List<BookEntity> books;
 
-    public ReaderEntity(Long id, String name, String favoriteBook, String currentBook, String birthday) {
+    public ReaderEntity(Long id, String name, String favoriteBook, String currentBook, String favoriteGenre) {
         this.id = id;
         this.name = name;
         this.favoriteBook = favoriteBook;
         this.currentBook = currentBook;
-        this.birthday = birthday;
+        this.favoriteGenre = favoriteGenre;
     }
 
     public ReaderEntity(){};
@@ -69,12 +70,18 @@ public class ReaderEntity {
         this.currentBook = currentBook;
     }
 
-    public String  getBirthday() {
-        return birthday;
+    public String getFavoriteGenre() {
+        return favoriteGenre;
     }
 
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+    public void setFavoriteGenre(String favoriteGenre) {
+        this.favoriteGenre = favoriteGenre;
+    }
+
+    public Integer getReadBook(){return readBook;}
+
+    public void setReadBook(Integer readBook){
+        this.readBook = readBook;
     }
 
     @Override
@@ -84,7 +91,7 @@ public class ReaderEntity {
                 ", name='" + name + '\'' +
                 ", favoriteBook='" + favoriteBook + '\'' +
                 ", currentBook='" + currentBook + '\'' +
-                ", Date of Birth=" + birthday +
+                ", favoriteGenre=" + favoriteGenre +
                 '}';
     }
 
