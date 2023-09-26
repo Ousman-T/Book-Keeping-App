@@ -8,7 +8,6 @@
 + Created with Spring Boot 
 + RESTful api to handle CRUD operations
 + Connect to a PostgreSQL Database
-+ Have middleware to validate inputs
 + Have endpoints for each CRUD operation
 
 
@@ -16,3 +15,6 @@
 
 + Create a front end 
 + Handle the application/db with Docker
++ Use middlewares to validate inputs
++ Implement a DTO to return data from two entities in one request
++ Implement exception handling
