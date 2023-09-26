@@ -9,6 +9,7 @@
 + RESTful api to handle CRUD operations
 + Connect to a PostgreSQL Database
 + Have endpoints for each CRUD operation
++ Application Architecture should be easy to follow and clear
 
 
 ### Stretch Goals
