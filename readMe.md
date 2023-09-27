@@ -8,9 +8,20 @@
 + Created with Spring Boot 
 + RESTful api to handle CRUD operations
 + Connect to a PostgreSQL Database
-+ Have endpoints for each CRUD operation
++ Persist Data
++ Have endpoints to handle varios CRUD functions.
 + Application Architecture should be easy to follow and clear
 
+
+____
+
+### Challenges
++ One of my main challenges with this project was pulling data from both tables within one request.
++ Getting familiar with hibernate.
++ Connecting application with database
++ Establishing a many to many relationship between tables.
+
+____
 
 ### Stretch Goals
 
