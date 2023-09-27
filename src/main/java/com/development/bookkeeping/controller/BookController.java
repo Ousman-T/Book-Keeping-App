@@ -3,6 +3,8 @@ package com.development.bookkeeping.controller;
 import com.development.bookkeeping.entity.BookEntity;
 import com.development.bookkeeping.service.BookService;
 import com.development.bookkeeping.service.ReaderBookService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -27,8 +29,14 @@ public class BookController {
         return bookService.findById(id);
     }
     @PostMapping
-    public BookEntity saveBook(@RequestBody BookEntity bookEntity){
-        return bookService.saveBook(bookEntity);
+    public ResponseEntity<BookEntity> saveBook(@RequestBody BookEntity bookEntity){
+        try{
+            BookEntity savedBook = bookService.saveBook(bookEntity);
+            return new ResponseEntity<>(savedBook, HttpStatus.CREATED);
+        }catch(Exception e){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+//        return bookService.saveBook(bookEntity);
     }
     @PutMapping("/{id}")
     public BookEntity updateBook(@PathVariable Long id,@RequestBody BookEntity bookEntity){
