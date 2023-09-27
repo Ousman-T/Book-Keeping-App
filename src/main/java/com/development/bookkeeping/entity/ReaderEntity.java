@@ -10,13 +10,13 @@ public class ReaderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "name")
+    @Column(name = "name", nullable = false)
     private String name;
-    @Column(name = "favoriteBook")
+    @Column(name = "favoriteBook", nullable = false)
     private String favoriteBook;
     @Column(name = "currentBook")
     private String currentBook;
-    @Column(name = "favoriteGenre")
+    @Column(name = "favoriteGenre", nullable = false)
     private String favoriteGenre;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
