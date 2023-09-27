@@ -1,9 +1,9 @@
 package com.development.bookkeeping.controller;
 
 import com.development.bookkeeping.entity.ReaderEntity;
-import com.development.bookkeeping.exception.ApiRequestException;
 import com.development.bookkeeping.service.ReaderService;
 import org.springframework.web.bind.annotation.*;
+import com.development.bookkeeping.service.ReaderBookService;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,9 +12,11 @@ import java.util.Optional;
 @RequestMapping("/reader")
 public class ReaderController {
     private final ReaderService readerService;
+    private final ReaderBookService readerBookService;
 
-    public ReaderController(ReaderService readerService) {
+    public ReaderController(ReaderService readerService, ReaderBookService readerBookService) {
         this.readerService = readerService;
+        this.readerBookService = readerBookService;
     }
 @GetMapping
     public List<ReaderEntity> findAllReaders(){
@@ -37,4 +39,6 @@ public class ReaderController {
     public void deleteReader(@PathVariable("id") Long id){
         readerService.deleteReader(id);
     }
+
+
 }

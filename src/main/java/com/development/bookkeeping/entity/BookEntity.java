@@ -18,8 +18,6 @@ public class BookEntity {
     private String genre;
     @Column(name = "description")
     private String description;
-    @Column(name = "readBy")
-    private Integer readBy;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
@@ -78,10 +76,6 @@ public class BookEntity {
         this.description = description;
     }
 
-    public Integer getReadBy(){return readBy;}
 
-    public void setReadBy(Integer readBy){
-        this.readBy = readBy;
-    }
 
 }

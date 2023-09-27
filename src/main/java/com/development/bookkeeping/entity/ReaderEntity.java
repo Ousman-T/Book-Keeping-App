@@ -18,8 +18,7 @@ public class ReaderEntity {
     private String currentBook;
     @Column(name = "favoriteGenre")
     private String favoriteGenre;
-    @Column(name = "readBook")
-    private Integer readBook;
+
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(
             name = "reader_books",
@@ -78,11 +77,6 @@ public class ReaderEntity {
         this.favoriteGenre = favoriteGenre;
     }
 
-    public Integer getReadBook(){return readBook;}
-
-    public void setReadBook(Integer readBook){
-        this.readBook = readBook;
-    }
 
     @Override
     public String toString() {
