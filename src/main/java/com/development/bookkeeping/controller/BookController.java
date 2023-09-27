@@ -2,6 +2,7 @@ package com.development.bookkeeping.controller;
 
 import com.development.bookkeeping.entity.BookEntity;
 import com.development.bookkeeping.service.BookService;
+import com.development.bookkeeping.service.ReaderBookService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,9 +12,11 @@ import java.util.Optional;
 @RequestMapping("/book")
 public class BookController {
     private final BookService bookService;
+    private final ReaderBookService readerBookService;
 
-    public BookController(BookService bookService) {
+    public BookController(BookService bookService, ReaderBookService readerBookService) {
         this.bookService = bookService;
+        this.readerBookService = readerBookService;
     }
     @GetMapping
     public List<BookEntity> findAllReaders(){
@@ -34,4 +37,6 @@ public class BookController {
     }
     @DeleteMapping("/{id}")
     public void deleteBook(@PathVariable("id") Long id){bookService.deleteBook(id);}
+
+
 }
